@@ -1,0 +1,7 @@
+tapi.processor.plugin.hide_starts_with:
+  type: mapping
+  label: 'Settings for the hide-starts-with processor'
+  mapping:
+    character:
+      type: string
+      label: Character
