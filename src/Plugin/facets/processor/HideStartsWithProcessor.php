@@ -1,16 +1,16 @@
 <?php
 
-namespace Drupal\hide_starts_with\Plugin\facetapi\processor;
+namespace Drupal\hide_starts_with\Plugin\facets\processor;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\facetapi\FacetInterface;
-use Drupal\facetapi\Processor\BuildProcessorInterface;
-use Drupal\facetapi\Processor\ProcessorPluginBase;
+use Drupal\facets\FacetInterface;
+use Drupal\facets\Processor\BuildProcessorInterface;
+use Drupal\facets\Processor\ProcessorPluginBase;
 
 /**
  * Provides a processor that hides results start with a configurable character.
  *
- * @FacetApiProcessor(
+ * @FacetsProcessor(
  *   id = "hide_start_with",
  *   label = @Translation("Hide start with some letter"),
  *   description = @Translation("Hide all results that start with a configurable character"),
@@ -48,7 +48,7 @@ class HideStartsWithProcessor extends ProcessorPluginBase implements BuildProces
 
     $char = $config->getConfiguration()['character'];
 
-    /** @var \Drupal\facetapi\Result\ResultInterface $result */
+    /** @var \Drupal\facets\Result\ResultInterface $result */
     foreach ($results as $id => $result) {
       if (strpos(strtolower($result->getDisplayValue()), $char) === 0) {
         unset($results[$id]);

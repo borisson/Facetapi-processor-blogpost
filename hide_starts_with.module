@@ -16,7 +16,7 @@ function hide_starts_with_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.hide_starts_with':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('A Facet API processor that hides all results that start with a configurable character.') . '</p>';
+      $output .= '<p>' . t('A Facets processor that hides all results that start with a configurable character.') . '</p>';
       return $output;
 
     default:
