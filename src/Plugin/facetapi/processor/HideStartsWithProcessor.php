@@ -31,7 +31,7 @@ class HideStartsWithProcessor extends ProcessorPluginBase implements BuildProces
     $build['character'] = [
       '#title' => $this->t('Character to hide'),
       '#type' => 'textfield',
-      '#default_value' => !is_null($config) ? $config->getConfiguration()['character'] : $this->defaultConfiguration()['exclude'],
+      '#default_value' => !is_null($config) ? $config->getConfiguration()['character'] : '',
       '#description' => $this->t("All results that start with this character will be hidden."),
     ];
 
